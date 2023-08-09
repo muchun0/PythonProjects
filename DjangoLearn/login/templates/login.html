@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+      <link rel="icon" type="image/x-icon" href={% static '/favicon.ico' %}>
+
+</head>
+<body>
+<div>
+    <h1>登录页面</h1>
+    <form action="/login/" method="post" >
+        {#        django中间件会校验是否存在token，需要添加token#}
+        {% csrf_token %}
+        <div><label class="fm-label-icon"><i class="icon-user iconfont" title="用户名"></i></label></div>
+        <div><input name="fm-login-id" type="text" class="fm-text"
+                    id="fm-login-id" tabindex="1"
+                    aria-label="账号名/邮箱/手机号" placeholder="账号名/邮箱/手机号"
+                    autocapitalize="off">
+        </div>
+        <div class="fm-field">
+            <div><label class="fm-label-icon"><i class="icon-pwd iconfont" title="请输入登录密码"></i></label>
+            </div>
+            <div class="input-plain-wrap input-wrap-password">
+                <input name="fm-login-password" type="password"
+                       class="fm-text" id="fm-login-password" tabindex="2"
+                       aria-label="请输入登录密码" placeholder="请输入登录密码"
+                       maxlength="40" autocapitalize="off">
+            </div>
+        </div>
+        <div class="fm-btn">
+            <button type="submit" tabindex="3" class="fm-button fm-submit password-login">登录</button>
+        </div>
+        <div>
+            <p style="color: red">{{ error }}</p>
+        </div>
+    </form>
+</div>
+</body>
+</html>
