@@ -12,9 +12,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #注册app，从app开始写，templates是文件夹
+    # 注册app，从app开始写，templates是文件夹
     'login.apps.LoginConfig'
 ]
 
@@ -57,7 +56,7 @@ ROOT_URLCONF = 'DjangoLearn.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        #templates从根目录开始找，当找不到时，从注册app，逐一按顺序查找
+        # templates从根目录开始找，当找不到时，从注册app，逐一按顺序查找
         'DIRS': [os.path.join(BASE_DIR, 'templates')]
         ,
         'APP_DIRS': True,
@@ -74,10 +73,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'DjangoLearn.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-#不适用默认数据库
+# 不适用默认数据库
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
@@ -87,14 +85,14 @@ WSGI_APPLICATION = 'DjangoLearn.wsgi.application'
 
 DATABASES = {
     'default':
-    {
-        'ENGINE': 'django.db.backends.mysql',    # 数据库引擎
-        'NAME': 'runoob', # 数据库名称
-        'HOST': '127.0.0.1', # 数据库地址，本机 ip 地址 127.0.0.1
-        'PORT': 3306, # 端口
-        'USER': 'root',  # 数据库用户名
-        'PASSWORD': '426983', # 数据库密码
-    }
+        {
+            'ENGINE': 'django.db.backends.mysql',  # 数据库引擎
+            'NAME': 'runoob',  # 数据库名称
+            'HOST': '127.0.0.1',  # 数据库地址，本机 ip 地址 127.0.0.1
+            'PORT': 3306,  # 端口
+            'USER': 'root',  # 数据库用户名
+            'PASSWORD': '426983',  # 数据库密码
+        }
 }
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -114,7 +112,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -127,7 +124,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

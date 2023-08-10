@@ -7,6 +7,7 @@ def login(request):
     # return HttpResponse('登录页面')
     # 获取请求方法，如果是get,返回login.html,post，则作为表单来处理，判断登录结果
     if request.method == 'GET':
+        # return render(request, 'extendslogin.html') ,继承模板
         return render(request, 'login.html')
     else:
         # 判断用户名与密码是否正确
