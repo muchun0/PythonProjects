@@ -48,7 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'login.middleware.middleLearn.MyMiddleware'
+    # 'login.middleware.middleLearn.MyMiddleware'
 ]
 
 ROOT_URLCONF = 'DjangoLearn.urls'

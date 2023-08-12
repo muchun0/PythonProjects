@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="icon" type="image/x-icon" href={% static '/favicon.ico' %}>
+    {% comment %} 引入bootstrap {% endcomment %}
+    <link rel="stylesheet" href={% static '/bootstrap-5.3.0-alpha1-dist/css/bootstrap.min.css' %}>
+    <style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* 可以根据需要设置容器高度 */
+        width:100em;
+        padding: 20em;
+        border: 1px;
+      }
+    </style>
+</head>
+<body>
+<div class="container">
+    <ol>
+        <li>你提出的要求，伴侣会很好地满足吗？</li>
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default">一点都不</button>
+            <button type="button" class="btn btn-default">稍微有点</button>
+            <button type="button" class="btn btn-default">适度地好</button>
+            <button type="button" class="btn btn-default">非常</button>
+            <button type="button" class="btn btn-default">极其</button>
+          </div>
+ 
+        <li>总的来看，你对自己的爱情是否满意？</li>
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default">一点都不</button>
+            <button type="button" class="btn btn-default">稍微有点</button>
+            <button type="button" class="btn btn-default">中等程度</button>
+            <button type="button" class="btn btn-default">非常</button>
+            <button type="button" class="btn btn-default">极其</button>
+          </div>
+
+        <li>比起大多数人，你的爱情关系有多好？</li>
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default">一点都不</button>
+            <button type="button" class="btn btn-default">稍微有点</button>
+            <button type="button" class="btn btn-default">中等程度</button>
+            <button type="button" class="btn btn-default">非常好</button>
+            <button type="button" class="btn btn-default">极其好</button>
+          </div>
+
+        <li>你在多大程度上宁愿没有爱上对方？</li>
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default">从来没有</button>
+            <button type="button" class="btn btn-default">很少</button>
+            <button type="button" class="btn btn-default">偶尔</button>
+            <button type="button" class="btn btn-default">经常</button>
+            <button type="button" class="btn btn-default">一直</button>
+          </div>
+ 
+        <li>爱情关系符合你最初的预期？</li>
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default">一点都不</button>
+            <button type="button" class="btn btn-default">稍微有点</button>
+            <button type="button" class="btn btn-default">中等程度</button>
+            <button type="button" class="btn btn-default">非常好</button>
+            <button type="button" class="btn btn-default">极其好</button>
+          </div>
+     
+        <li>你爱你的情侣有多深？</li>
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default">一点都不</button>
+            <button type="button" class="btn btn-default">稍微有点</button>
+            <button type="button" class="btn btn-default">中等程度</button>
+            <button type="button" class="btn btn-default">非常</button>
+            <button type="button" class="btn btn-default">极其</button>
+          </div>
+        
+        <li>你们的爱情关系中存在的问题多吗？</li>
+        <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default">一个都没有</button>
+            <button type="button" class="btn btn-default">少数几个</button>
+            <button type="button" class="btn btn-default">一些</button>
+            <button type="button" class="btn btn-default">许多</button>
+            <button type="button" class="btn btn-default">太多了</button>
+          </div>
+        <p><span>下滑查看分数计算规则</span></p>
+        
+        </ol>
+        </div> 
+        <div class="below-div">
+            <text>分数计算规则是：从第一个选项到最后一个选项对应1-5分，
+                第4和7选项则正好相反，如果你选了第一个选项就记5分，第5个选项就记1分，
+                然后把得分加起来。总分越高，则对爱情关系越满意
+            </text>
+            </div>
+</body>
+<link rel="stylesheet" href={% static '/bootstrap-5.3.0-alpha1-dist/js/bootstrap.min.js' %}>
+</html>

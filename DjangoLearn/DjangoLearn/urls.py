@@ -24,5 +24,6 @@ urlpatterns = [
     path('add_book',views.add_book),
     path('search',views.search_book),
     path('delete',views.delete_book),
-    path('update',views.update_book)
+    path('update',views.update_book),
+    path('loverelationshipevaluationscale',views.loverelationshipevaluationscale),
 ]

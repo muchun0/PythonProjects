@@ -64,3 +64,7 @@ def delete_book(request):
     # 删除主键1或2的数据，返回值：元组，第一个元素为受影响的行数。
     books = models.Book.objects.filter(pk__in=[1, 2]).delete()
     return HttpResponse("<p>数据删除成功！</p>")
+
+#返回loverelationshipevaluationscale.html
+def loverelationshipevaluationscale(request):
+    return render(request, 'loverelationshipevaluationscale.html')
