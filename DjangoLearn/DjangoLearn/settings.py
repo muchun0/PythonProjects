@@ -91,8 +91,8 @@ DATABASES = {
             'HOST': '127.0.0.1',  # 数据库地址，本机 ip 地址 127.0.0.1
             'PORT': 3306,  # 端口
             'USER': 'root',  # 数据库用户名
-            # 'PASSWORD': '426983',  # 数据库密码
-            'PASSWORD': 'yue_426983',  # 数据库密码
+            'PASSWORD': '426983',  # 数据库密码
+            
         }
 }
 # Password validation
@@ -116,8 +116,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 TIME_ZONE = 'UTC'
 
 USE_I18N = True

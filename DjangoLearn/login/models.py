@@ -33,3 +33,12 @@ class AuthorDetail(models.Model):
     tel = models.CharField(max_length=32)
     addr = models.CharField(max_length=64)
     birthday = models.DateField()
+
+class UserInfo(models.Model):
+    username = models.CharField(max_length=32,verbose_name="用户名")
+    password = models.CharField(max_length=64,verbose_name="密码")
+    email = models.EmailField(verbose_name="邮箱")
+    #一对多关系
+    # user_type = models.ForeignKey("UserType", on_delete=models.CASCADE,verbose_name="用户类型")
+    #多对多关系
+    # roles = models.ManyToManyField("Role",verbose_name="角色")

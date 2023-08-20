@@ -1,24 +1,52 @@
 from django.shortcuts import render, redirect
 from django.shortcuts import HttpResponse
+from django import forms
+from login import models
+
+class LoginForm(forms.Form):
+    username = forms.CharField(label='用户名',
+                                max_length=10, 
+                                error_messages={'required': '用户名不能为空'},
+                                widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '请输入用户名'}))
+    password = forms.CharField(label='密码',
+                                max_length=10, 
+                                error_messages={'required': '密码不能为空'}, 
+                                widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '请输入密码'}))
 
 
-# Create your views here.
 def login(request):
-    # return HttpResponse('登录页面')
-    # 获取请求方法，如果是get,返回login.html,post，则作为表单来处理，判断登录结果
     if request.method == 'GET':
-        # return render(request, 'extendslogin.html') ,继承模板
-        return render(request, 'login.html')
+        form = LoginForm()
+        return render(request, 'login.html', {'form': form})
     else:
-        # 判断用户名与密码是否正确
-        username = request.POST.get('fm-login-id')
-        password = request.POST.get('fm-login-password')
-        # 预期通过数据库去查
-        if username == 'admin' and password == '123':
-            # 默认跳转http://127.0.0.1:8000/index/ 注意index前的‘/’不可省略，否则将跳转http://127.0.0.1:8000/login/index/
-            return redirect('/index/')
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = models.UserInfo.objects.filter(username=username, password=password).first()
+            if user:
+                return redirect('/index/')
+            else:
+                return render(request, 'login.html', {'error': '用户名或密码错误','form':form})
         else:
-            return render(request, 'login.html', {'error': '用户名或密码错误'})
+            return render(request, 'login.html', {'form': form})
+# Create your views here.
+# def login(request):
+#     # return HttpResponse('登录页面')
+#     # 获取请求方法，如果是get,返回login.html,post，则作为表单来处理，判断登录结果
+#     if request.method == 'GET':
+#         # return render(request, 'extendslogin.html') ,继承模板
+#         return render(request, 'login.html')
+#     else:
+#         # 判断用户名与密码是否正确
+#         username = request.POST.get('fm-login-id')
+#         password = request.POST.get('fm-login-password')
+#         # 预期通过数据库去查
+#         if username == 'admin' and password == '123':
+#             # 默认跳转http://127.0.0.1:8000/index/ 注意index前的‘/’不可省略，否则将跳转http://127.0.0.1:8000/login/index/
+#             return redirect('/index/')
+#         else:
+#             return render(request, 'login.html', {'error': '用户名或密码错误'})
 
 
 def index(request):
