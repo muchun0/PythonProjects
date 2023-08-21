@@ -42,3 +42,6 @@ class UserInfo(models.Model):
     # user_type = models.ForeignKey("UserType", on_delete=models.CASCADE,verbose_name="用户类型")
     #多对多关系
     # roles = models.ManyToManyField("Role",verbose_name="角色")
+class Department(models.Model):
+    title = models.CharField(max_length=32,verbose_name="部门名称")
+    count = models.IntegerField(verbose_name="部门人数")

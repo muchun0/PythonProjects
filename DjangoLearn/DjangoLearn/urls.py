@@ -26,4 +26,7 @@ urlpatterns = [
     path('delete',views.delete_book),
     path('update',views.update_book),
     path('loverelationshipevaluationscale',views.loverelationshipevaluationscale),
+    path('depart_list',views.depart_list),
+    #q:为什么这里需要后边加一个‘/’
+    path('add/depart/',views.add_depart),
 ]

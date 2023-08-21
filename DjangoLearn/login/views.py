@@ -96,3 +96,26 @@ def delete_book(request):
 #返回loverelationshipevaluationscale.html
 def loverelationshipevaluationscale(request):
     return render(request, 'loverelationshipevaluationscale.html')
+
+def depart_list(request):
+    query_set = models.Department.objects.all()
+    return render(request, 'depart_list.html', {'query_set': query_set})
+
+
+class DepartForm(forms.ModelForm):
+    class Meta:
+        model = models.Department
+        fields = '__all__'
+
+def add_depart(request):
+    if request.method == 'GET':
+        form = DepartForm()
+        return render(request, 'add_depart.html', {'form': form})
+    if request.method == 'POST':
+        form = DepartForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/depart_list')
+        else:
+            form = DepartForm()
+            return render(request, 'add_depart.html', {'form': form})
