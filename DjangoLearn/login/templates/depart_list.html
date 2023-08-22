@@ -17,6 +17,7 @@
                 <th>ID</th>
                 <th>名称</th>
                 <th>人数</th>
+                <th>操作</th>
             </tr>
         </thead>
         <tbody>
@@ -25,6 +26,9 @@
                 <td>{{ depart.id }}</td>
                 <td>{{ depart.title }}</td>
                 <td>{{ depart.count }}</td>
+                <td>
+                    <a href="/delete/depart/?did={{depart.id}}">删除</a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>

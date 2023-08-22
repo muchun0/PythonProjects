@@ -119,3 +119,7 @@ def add_depart(request):
         else:
             form = DepartForm()
             return render(request, 'add_depart.html', {'form': form})
+def delete_depart(request):
+    did = request.GET.get('did')
+    models.Department.objects.filter(id=did).delete()
+    return redirect('/depart_list')
