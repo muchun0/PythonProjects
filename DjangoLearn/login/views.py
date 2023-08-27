@@ -106,6 +106,7 @@ class DepartForm(forms.ModelForm):
     class Meta:
         model = models.Department
         fields = '__all__'
+        # fields = ['title', 'code'] #指定字段
 
 def add_depart(request):
     if request.method == 'GET':
@@ -121,5 +122,20 @@ def add_depart(request):
             return render(request, 'add_depart.html', {'form': form})
 def delete_depart(request):
     did = request.GET.get('did')
+    #物理删除，实际中一般不会这么做，多用逻辑删除
     models.Department.objects.filter(id=did).delete()
     return redirect('/depart_list')
+def update_depart(request):
+    did = request.GET.get('did')
+    #获取要更新数据的对象
+    depart_obj = models.Department.objects.filter(id=did).first()
+    if request.method == 'GET':
+        form = DepartForm(instance=depart_obj)
+        return render(request, 'update_depart.html', {'form': form})
+    if request.method == 'POST':
+        form = DepartForm(data=request.POST, instance=depart_obj)
+        if form.is_valid():
+            form.save()
+            return redirect('/depart_list')
+        else:
+            return render(request, 'update_depart.html', {'form': form})

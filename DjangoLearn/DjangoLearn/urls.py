@@ -29,4 +29,6 @@ urlpatterns = [
     path('depart_list',views.depart_list),
     #q:为什么这里需要后边加一个‘/’
     path('add/depart/',views.add_depart),
+    path('delete/depart/',views.delete_depart),
+    path('update/depart/',views.update_depart),
 ]
