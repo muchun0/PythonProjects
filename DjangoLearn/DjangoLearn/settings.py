@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 注册app，从app开始写，templates是文件夹
-    'login.apps.LoginConfig',
+    # 'login.apps.LoginConfig',
     'web.apps.WebConfig',
+    'gift.apps.GiftConfig'
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,5 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
