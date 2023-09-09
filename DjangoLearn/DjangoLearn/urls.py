@@ -20,5 +20,6 @@ urlpatterns = [
     path('password_reset/',PasswordResetView.as_view,name='password_reset'),
     path('login/',views.login),
     path('register',views.register),
-    path('get_captcha',views.get_captcha)
+    path('get_captcha',views.get_captcha),
+    path('index',views.index)
 ]

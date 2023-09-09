@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # 注册app，从app开始写，templates是文件夹
     # 'login.apps.LoginConfig',
-    'web.apps.WebConfig',
     'gift.apps.GiftConfig'
 ]
 
