@@ -1,0 +1,20 @@
+{
+  "books": [
+    {
+      "books_name": "我的玩家好凶猛",
+      "books_info": {
+        "book_url": "http://www.xheiyan.info/wodewanjiahaoxiongmeng/",
+        "index_url_xpath": "/html/body/div[4]/div[2]/div[4]/div/ul",
+        "file_path": "./txt/我的玩家好凶猛.txt"
+      }
+    },
+    {
+      "books_name": "太初",
+      "books_info": {
+        "book_url": "http://www.xheiyan.info/taichu/",
+        "index_url_xpath": "/html/body/div[4]/div[2]/div[4]/div/ul",
+        "file_path": "./txt/太初.txt"
+      }
+    }
+  ]
+}
